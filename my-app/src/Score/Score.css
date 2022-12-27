@@ -1,0 +1,11 @@
+.players{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3{
+    font-size: 2rem;
+    font-family: monospace;
+}
