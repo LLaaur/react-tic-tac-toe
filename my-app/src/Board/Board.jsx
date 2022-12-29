@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function Board({setScore}){
     const [nodes, setNodes] = useState({});
-    const [board, setBoard] = useState({});
+    const [board, setBoard] = useState(Array(9).fill(''));
     const [winLine, setWinLine] = useState([]);
 
     const gameReset = () => {
@@ -12,7 +12,7 @@ function Board({setScore}){
         setBoard(Array(9).fill(''));
     }
 
-    const getEmptySquares = () => {
+    const getEmptySquares = (board) => {
         const moves = [];
         board.forEach((square, index) => {
             if (!square) { 
@@ -36,7 +36,7 @@ function Board({setScore}){
     if (board[id] !== '') return;
 
     let modifiedBoard = [...board];
-    modifiedBoard = 'X';
+    modifiedBoard[id] = 'X';
 
     setBoard(modifiedBoard);
 
@@ -69,7 +69,7 @@ function Board({setScore}){
 
     let randomNumber = getBestMove(modifiedBoard, 0, false);
     if (modifiedBoard[randomNumber] == ''){
-        modifiedBoard[randomNumber] = '0';
+        modifiedBoard[randomNumber] = 'O';
     }
 
 
@@ -180,20 +180,22 @@ function Board({setScore}){
 
         <div className="board">
 
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            <Square />
-            
+            {board.map((val, i) => {
+                return(
+
+                    <Square key={i}
+                            id={i}
+                            value={value}
+                            handleClick={handleWinner}
+                            board={winLine}
+                            
+                            />      
+                );
+            })}
 
         </div>
 
-    )
+    );
 }
 
 export default Board
