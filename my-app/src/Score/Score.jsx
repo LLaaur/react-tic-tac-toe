@@ -10,7 +10,7 @@ function Score(){
             <div className="bot"> <h3>Score:</h3> </div>
 
         </div>
-    )
+    );
 }
 
 export default Score
