@@ -24,7 +24,7 @@ function Board({setScore}){
     const handleClick = (id) => {
         if (
             winningConditions(board).winner === 'X' ||
-            winningConditions(board).winner === '0'  ||
+            winningConditions(board).winner === 'O'  ||
             fullBoard(board)
         ) {
             gameReset();
@@ -48,22 +48,26 @@ function Board({setScore}){
         return
     }
 
-    if (winningConditions(modifiedBoard).winner == '0'){
+    let randomNumber = getBestMove(modifiedBoard, 0, false);
+    if (modifiedBoard[randomNumber] == ''){
+        modifiedBoard[randomNumber] = 'O';
+    }
+
+    if (winningConditions(modifiedBoard).winner == 'O'){
         console.log(winningConditions(modifiedBoard));
         setWinLine(winningConditions(modifiedBoard).winLine);
-        setScore((prevState) => ({...prevState, O: prevState.O + 1}));
+        setScore((prevState) => ({...prevState, o: prevState.o + 1}));
         return
     }
 
     if (winningConditions(modifiedBoard).winner == 'tie'){
         console.log(winningConditions(modifiedBoard));
         setScore((prevState) => ({...prevState, tie: prevState.tie + 1}));
-    };
-
-    let randomNumber = getBestMove(modifiedBoard, 0, false);
-    if (modifiedBoard[randomNumber] == ''){
-        modifiedBoard[randomNumber] = 'O';
     }
+
+
+
+    setBoard(modifiedBoard);
 }
 
     
@@ -107,7 +111,7 @@ function Board({setScore}){
           }
       
           if (fullBoard(board)) {
-            return { winner: "draw" };
+            return { winner: "tie" };
           }
       
           return false;
@@ -134,7 +138,7 @@ function Board({setScore}){
                 child[index] = 'X';
 
                 let score = getBestMove(child, depth + 1, false, callBack);
-                best = Math.min(best, score);
+                best = Math.max(best, score);
             });
 
             return best;
@@ -145,14 +149,13 @@ function Board({setScore}){
 
             getEmptySquares(newBoard).forEach((index) => {
                 let child = [...newBoard];
-                child[index] = '0';
+                child[index] = 'O';
 
                 let score = getBestMove(child, depth + 1, true, callBack);
                 best = Math.min(best, score);
 
                 if (depth === 0){
-                    console.log(nodes);
-                    const moves = nodes[score] ? `${nodes[score]}, ${index}` : index;
+                    const moves = nodes[score] ? `${nodes[score]},${index}` : index;
                     nodes[score] = moves;
                 }
             });
