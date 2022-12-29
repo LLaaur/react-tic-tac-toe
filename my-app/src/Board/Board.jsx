@@ -15,25 +15,26 @@ function Board({setScore}){
     const getEmptySquares = (board) => {
         const moves = [];
         board.forEach((square, index) => {
-            if (!square) { 
-                moves.push(index) 
-            }
+          if (!square) moves.push(index);
         });
         return moves;
-    }
+      };
 
-    const handleWinner = (id) => {
+
+    const handleClick = (id) => {
         if (
-            winningConditions(board).winner == 'X' ||
-            winningConditions(board).winner == '0'  ||
+            winningConditions(board).winner === 'X' ||
+            winningConditions(board).winner === '0'  ||
             fullBoard(board)
         ) {
             gameReset();
             return
         }
-    }
+    
 
     if (board[id] !== '') return;
+    
+
 
     let modifiedBoard = [...board];
     modifiedBoard[id] = 'X';
@@ -54,22 +55,24 @@ function Board({setScore}){
         return
     }
 
-    if (winningConditions(modifiedBoard).winner = 'tie'){
+    if (winningConditions(modifiedBoard).winner == 'tie'){
         console.log(winningConditions(modifiedBoard));
         setScore((prevState) => ({...prevState, tie: prevState.tie + 1}));
     };
 
+    let randomNumber = getBestMove(modifiedBoard, 0, false);
+    if (modifiedBoard[randomNumber] == ''){
+        modifiedBoard[randomNumber] = 'O';
+    }
+}
+
+    
     const emptySquares = (board) => {
         return board.every((square) => !square);
     }
 
     const fullBoard = (board) => {
         return board.every((square) => square);
-    }
-
-    let randomNumber = getBestMove(modifiedBoard, 0, false);
-    if (modifiedBoard[randomNumber] == ''){
-        modifiedBoard[randomNumber] = 'O';
     }
 
 
@@ -185,8 +188,8 @@ function Board({setScore}){
 
                     <Square key={i}
                             id={i}
-                            value={value}
-                            handleClick={handleWinner}
+                            value={val}
+                            handleClick={handleClick}
                             board={winLine}
                             
                             />      

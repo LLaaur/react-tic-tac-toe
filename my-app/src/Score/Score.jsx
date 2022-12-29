@@ -1,16 +1,26 @@
 import './Score.css'
 
 
-function Score(score){
+function Score({ score }) {
     return (
-        <div className="players">
-
-            <div className="human"><h3>{score.x}</h3></div>
-            <div className="tie"><h3>{score.tie}</h3></div>
-            <div className="bot"> <h3>{score.o}</h3> </div>
-
+      <div className="score">
+        <div>
+          <span>Player</span>
+          <br />
+          <span>{score.x}</span>
         </div>
+        <div>
+          <span>Tie</span>
+          <br />
+          <span>{score.tie}</span>
+        </div>
+        <div>
+          <span>Computer</span>
+          <br />
+          <span>{score.o}</span>
+        </div>
+      </div>
     );
-}
+  }
 
 export default Score
