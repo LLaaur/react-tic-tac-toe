@@ -3,9 +3,9 @@ import './Score.css'
 
 function Score({ score }) {
     return (
-      <div className="score">
+      <div className="score font-link">
         <div>
-          <span>Player</span>
+            <span>Player</span>
           <br />
           <span>{score.x}</span>
         </div>

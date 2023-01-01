@@ -7,27 +7,29 @@
     text-align: center;
     font-size: 58px;
     font-weight: 100;
-    color: #fffffff6;
-    border: 3px solid #ffffff;
+    color: #f9fa00;
+    border: 5px solid #f9fa00;
     cursor: pointer;
     user-select: none;
+    border-radius: 10%;
+    font-weight: 100;
 }
 
 
 .square:nth-child(1) {
-    border-width: 3px 3px 3px 3px;
+    border-width: 5px 5px 5px 5px;
 }
 
 .square:nth-child(2) {
-    border-width: 3px 0 3px 0;
+    border-width: 5px 0 5px 0;
 }
 
 .square:nth-child(3) {
-    border-width: 3px 3px 3px 3px;
+    border-width: 5px 5px 5px 5px;
 }
 
 .square:nth-child(4) {
-    border-width: 0 3px 0 3px;
+    border-width: 0 5px 0 5px;
 }
 
 .square:nth-child(5) {
@@ -35,17 +37,35 @@
 }
 
 .square:nth-child(6) {
-    border-width: 0 3px 0 3px;
+    border-width: 0 5px 0 5px;
 }
 
 .square:nth-child(7) {
-    border-width: 3px 3px 3px 3px;
+    border-width: 5px 5px 5px 5px;
 }
 
 .square:nth-child(8) {
-    border-width: 3px 0 3px 0;
+    border-width: 5px 0 5px 0;
 }
 
 .square:nth-child(9) {
-    border-width: 3px 3px 3px 3px;
+    border-width: 5px 5px 5px 5px;
+}
+
+@keyframes lineThrough {
+    30% {
+        opacity: 0;
+        color: rgb(255, 0, 98);
+
+    }
+}
+
+
+.changed {
+    animation: lineThrough .7s linear infinite;
+}
+
+
+.font-link{
+    font-family: 'Rubik Bubbles', cursive;
 }

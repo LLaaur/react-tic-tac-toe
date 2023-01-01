@@ -3,7 +3,16 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    row-gap: 10rem;
+    row-gap: 5rem;
     justify-content: center;
     align-items: center;
+}
+
+
+
+.font-link{
+    font-weight: 100;
+    color: #f9fa00;
+    font-size: 3rem;
+    font-family: 'Rubik Bubbles', cursive;
 }

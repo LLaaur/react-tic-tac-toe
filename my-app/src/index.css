@@ -3,9 +3,12 @@
     padding: 0;
     box-sizing: border-box; 
 
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: rgb(103, 168, 194);
+    background-color: #fc5000;
+}
+
+.font-link{
+    font-family: 'Rubik Bubbles', cursive;
 }

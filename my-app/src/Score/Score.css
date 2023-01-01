@@ -11,5 +11,11 @@ span{
     width: 100%;
     display: flex;
     justify-content: center;
+    color: #f9fa00;
+    font-weight: 100;
+}
+
+.font-link{
+    font-family: 'Rubik Bubbles', cursive;
 }
 
