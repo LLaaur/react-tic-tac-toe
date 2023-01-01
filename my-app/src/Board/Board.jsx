@@ -42,7 +42,6 @@ function Board({setScore}){
     setBoard(modifiedBoard);
 
     if (winningConditions(modifiedBoard).winner == 'X'){
-        console.log(winningConditions(modifiedBoard));
         setWinLine(winningConditions(modifiedBoard).winLine);
         setScore((prevState) => ({...prevState, x: prevState.x + 1}));
         return
@@ -54,14 +53,12 @@ function Board({setScore}){
     }
 
     if (winningConditions(modifiedBoard).winner == 'O'){
-        console.log(winningConditions(modifiedBoard));
         setWinLine(winningConditions(modifiedBoard).winLine);
         setScore((prevState) => ({...prevState, o: prevState.o + 1}));
         return
     }
 
     if (winningConditions(modifiedBoard).winner == 'tie'){
-        console.log(winningConditions(modifiedBoard));
         setScore((prevState) => ({...prevState, tie: prevState.tie + 1}));
     }
 

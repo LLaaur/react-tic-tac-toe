@@ -69,3 +69,11 @@
 .font-link{
     font-family: 'Rubik Bubbles', cursive;
 }
+
+@media (max-width: 700px) {
+    .square {
+        width: 100px;
+        height: 100px;
+        font-size: 44px;
+    }
+}

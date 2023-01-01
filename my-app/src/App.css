@@ -16,3 +16,15 @@
     font-size: 3rem;
     font-family: 'Rubik Bubbles', cursive;
 }
+
+@media (max-width: 700px) {
+    .app {
+        row-gap: 0;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+    .app {
+        row-gap: 0;
+    }
+}

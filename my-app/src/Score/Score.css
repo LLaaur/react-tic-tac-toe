@@ -19,3 +19,51 @@ span{
     font-family: 'Rubik Bubbles', cursive;
 }
 
+.players{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+img{
+    width: 10%;
+}
+
+
+@media (max-width: 700px) {
+
+    .score{
+        height: 10%;
+    }
+
+    img {
+        width: 25%;
+    }
+
+    span{
+        font-size: 1.2rem;
+    }
+
+    .emptySpace{
+        display: none;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+    .score{
+        height: 10%;
+    }
+
+    img{
+        width: 15%;
+    }
+
+    span{
+        font-size: 1.2rem;
+    }
+
+    .emptySpace{
+        display: none;
+    }
+}

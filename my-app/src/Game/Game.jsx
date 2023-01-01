@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Board from '../Board/Board';
 import Score from '../Score/Score';
+import './Game.css'
 
 function Game() {
 
