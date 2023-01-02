@@ -1,0 +1,69 @@
+.score{
+    display: flex;
+    width: 100%;
+    height: 25%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span{
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #f9fa00;
+    font-weight: 100;
+}
+
+.font-link{
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+.players{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+img{
+    width: 10%;
+}
+
+
+@media (max-width: 700px) {
+
+    .score{
+        height: 10%;
+    }
+
+    img {
+        width: 25%;
+    }
+
+    span{
+        font-size: 1.2rem;
+    }
+
+    .emptySpace{
+        display: none;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+    .score{
+        height: 10%;
+    }
+
+    img{
+        width: 15%;
+    }
+
+    span{
+        font-size: 1.2rem;
+    }
+
+    .emptySpace{
+        display: none;
+    }
+}

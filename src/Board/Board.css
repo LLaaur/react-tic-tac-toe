@@ -1,0 +1,7 @@
+.board {
+    max-width: 452px;
+    max-height: 452;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 5px;
+}
