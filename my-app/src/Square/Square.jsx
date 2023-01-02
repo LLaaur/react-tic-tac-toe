@@ -1,5 +1,7 @@
 import './Square.css'
 
+// square function with parameters that check for a winning index to trigger the win animation
+
 function Square({id, value, handleClick, board}){
     return (
         <div className = 'square font-link' id={id} onClick={() => handleClick(id)}>

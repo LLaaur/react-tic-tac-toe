@@ -5,11 +5,16 @@ import './Game.css'
 
 function Game() {
 
+    // set default score for both player and bot
+
     const [score, setScore] = useState({
         x: 0,
         o: 0,
         tie: 0
     })
+
+
+    // render the score along with the game board
 
     return (
 

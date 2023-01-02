@@ -4,6 +4,8 @@ import humanPlayer from '/home/laur/Desktop/react-tic-tac-toe/my-app/src/assets/
 import draw from '/home/laur/Desktop/react-tic-tac-toe/my-app/src/assets/equal.png'
 
 
+// render the player, the tie and the bot scores
+
 function Score({ score }) {
     return (
       <div className="score font-link">

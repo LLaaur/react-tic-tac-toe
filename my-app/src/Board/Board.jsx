@@ -192,7 +192,7 @@ function Board({setScore}){
     };
 
 
-    // render the dom elements
+    // render the board and pass properties in each square
 
     return(
 
