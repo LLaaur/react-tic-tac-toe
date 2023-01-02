@@ -12,6 +12,9 @@ function Board({setScore}){
         setBoard(Array(9).fill(''));
     }
 
+
+    // function to check for available squares on the board
+
     const getEmptySquares = (board) => {
         const moves = [];
         board.forEach((square, index) => {
@@ -21,6 +24,8 @@ function Board({setScore}){
       };
 
 
+    // handler function on square click to check for winning lines
+      
     const handleClick = (id) => {
         if (
             winningConditions(board).winner === 'X' ||
@@ -35,17 +40,23 @@ function Board({setScore}){
     if (board[id] !== '') return;
     
 
+    
+    // assign the X symbol for the player
 
     let modifiedBoard = [...board];
     modifiedBoard[id] = 'X';
 
     setBoard(modifiedBoard);
 
+    // Increment the score on win declaration
+
     if (winningConditions(modifiedBoard).winner == 'X'){
         setWinLine(winningConditions(modifiedBoard).winLine);
         setScore((prevState) => ({...prevState, x: prevState.x + 1}));
         return
     }
+
+    // assign the 0 symbol for the algorithm
 
     let randomNumber = getBestMove(modifiedBoard, 0, false);
     if (modifiedBoard[randomNumber] == ''){
@@ -66,7 +77,6 @@ function Board({setScore}){
 
     setBoard(modifiedBoard);
 }
-
     
     const emptySquares = (board) => {
         return board.every((square) => !square);
@@ -76,6 +86,7 @@ function Board({setScore}){
         return board.every((square) => square);
     }
 
+    // declaring the indexes of the winning squares and lines
 
     const winningConditions = (board) => {
         if (emptySquares(board)) return false;
@@ -113,6 +124,8 @@ function Board({setScore}){
       
           return false;
     };
+
+    // minimax algorithm
 
     const getBestMove = (newBoard, depth, isMax, callBack = () => {}) => {
         if (depth === 0) { setNodes({}) };
@@ -178,6 +191,8 @@ function Board({setScore}){
         }
     };
 
+
+    // render the dom elements
 
     return(
 
