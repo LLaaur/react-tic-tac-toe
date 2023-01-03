@@ -1,7 +1,7 @@
 import './Score.css'
-import aiBot from '/home/laur/Desktop/react-tic-tac-toe/my-app/src/assets/ai.png'
-import humanPlayer from '/home/laur/Desktop/react-tic-tac-toe/my-app/src/assets/user-icon.png'
-import draw from '/home/laur/Desktop/react-tic-tac-toe/my-app/src/assets/equal.png'
+import aiBot from './ai.png'
+import humanPlayer from './user-icon.png'
+import draw from './equal.png'
 
 
 // render the player, the tie and the bot scores
