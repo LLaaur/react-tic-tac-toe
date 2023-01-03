@@ -29,3 +29,9 @@ Mini-Max algorithm uses recursion to search through the game-tree.
 Min-Max algorithm is mostly used for game playing in AI. Such as Chess, Checkers, tic-tac-toe, go, and various tow-players game. This Algorithm computes the minimax decision for the current state.
 
 More info can be found here --> <a href = 'https://www.javatpoint.com/mini-max-algorithm-in-ai' >javaatpoint.com</a> 
+
+
+![x si 0](https://user-images.githubusercontent.com/102544514/210383299-a65b777f-b07a-464c-bbdf-a652c66dd83e.png)
+
+
+👉 <a link href = 'https://react-tic-tac-8yeghdlrz-llaaur.vercel.app/' /> Live Demo </a>
